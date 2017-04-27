@@ -35,7 +35,7 @@ $(function () {
         }
 
         var startMessageInput = {
-            InviteTargetUri: "sip:toshm@metio.onmicrosoft.com",
+            InviteTargetUri: "sip:tomjebo@jebosoft.onmicrosoft.com",
             WelcomeMessage: "Welcome!",
             IsStart: true,
             Subject: "HelpDesk",

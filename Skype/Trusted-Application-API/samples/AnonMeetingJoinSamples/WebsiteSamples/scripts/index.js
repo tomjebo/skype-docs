@@ -13,7 +13,7 @@ $(function() {
             $('#client_state').text(state);
         });
         window.skypeWebApp.allowedOrigins = window.location.href;
-        window.skypeWebApp.serviceUrl = "https://[cloudName].cloudapp.net"; //UCAP cloud application URI
+        window.skypeWebApp.serviceUrl = "https://vhtrustedcloud.azurewebsites.net"; //UCAP cloud application URI
     }, function(err) {
         console.log(err);
         alert('Cannot load the SDK.');

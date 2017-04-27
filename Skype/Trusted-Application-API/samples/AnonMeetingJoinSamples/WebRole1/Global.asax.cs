@@ -2,6 +2,7 @@
 using Microsoft.SfB.PlatformService.SDK.Samples.ApplicationCore;
 using Microsoft.SfB.PlatformService.SDK.Common;
 using System;
+using System.Configuration;
 using System.Web.Http;
 using System.Web.Mvc;
 using System.Web;
@@ -51,19 +52,19 @@ namespace Microsoft.SfB.PlatformService.SDK.Samples.FrontEnd
             UnityConfig.RegisterComponents();
 
             //Read settings from cloud config.
-            var discoverUri = CloudConfigurationManager.GetSetting("PlatformDiscoverUri");
-            var audienceUri = CloudConfigurationManager.GetSetting("PlatformAudienceUri");
-            var callbackUriFormat = CloudConfigurationManager.GetSetting("CallbackUriFormat");
-            var resourcesUriFormat = CloudConfigurationManager.GetSetting("ResourcesUriFormat");
-            var applicationEndpointUri = CloudConfigurationManager.GetSetting("ApplicationEndpointId");
-            var aadClientId = CloudConfigurationManager.GetSetting("AAD_ClientId");
-            var aadClientSecret = CloudConfigurationManager.GetSetting("AAD_ClientSecret");
-            var aadAuthorityUri = CloudConfigurationManager.GetSetting("AAD_AuthorityUri");
-            var appTokenCertThumbprint = CloudConfigurationManager.GetSetting("AppTokenCertThumbprint");
+            var discoverUri = ConfigurationManager.AppSettings["PlatformDiscoverUri"];
+            var audienceUri = ConfigurationManager.AppSettings["PlatformAudienceUri"];
+            var callbackUriFormat = ConfigurationManager.AppSettings["CallbackUriFormat"];
+            var resourcesUriFormat = ConfigurationManager.AppSettings["ResourcesUriFormat"];
+            var applicationEndpointUri = ConfigurationManager.AppSettings["ApplicationEndpointId"];
+            var aadClientId = ConfigurationManager.AppSettings["AAD_ClientId"];
+            var aadClientSecret = ConfigurationManager.AppSettings["AAD_ClientSecret"];
+            var aadAuthorityUri = ConfigurationManager.AppSettings["AAD_AuthorityUri"];
+            var appTokenCertThumbprint = ConfigurationManager.AppSettings["AppTokenCertThumbprint"];
             bool logFullHttpRequestResponse = false;
-            Boolean.TryParse(CloudConfigurationManager.GetSetting("LogFullHttpRequestResponse"), out logFullHttpRequestResponse);
+            Boolean.TryParse(ConfigurationManager.AppSettings["LogFullHttpRequestResponse"], out logFullHttpRequestResponse);
             bool isSandBoxEnv = false;
-            Boolean.TryParse(CloudConfigurationManager.GetSetting("IsSandBoxEnv"), out isSandBoxEnv);
+            Boolean.TryParse(ConfigurationManager.AppSettings["IsSandBoxEnv"], out isSandBoxEnv);
             //Initialize application
            
             AzureApplication = new SampleJobPlayGroundApplication();//The azure app will act as a sample job playground, which accept command from controller (incoming http requests), and execute simple job tasks.

@@ -22,9 +22,10 @@ namespace Microsoft.SfB.PlatformService.SDK.Samples.FrontEnd
             };
 
             // Add allowed origins.
-            _policy.Origins.Add("http://localhost");
-            _policy.Origins.Add("https://demos.metio.ms");
-            _policy.Origins.Add("http://sdksamplesucap.azurewebsites.net");
+            _policy.Origins.Add("https://localhost/trustedtest/index.html");
+            _policy.Origins.Add("https://vhtrustedcloud.cloudapp.net");
+            //_policy.Origins.Add("https://demos.metio.ms");
+            //_policy.Origins.Add("http://sdksamplesucap.azurewebsites.net");
         }
 
         public Task<CorsPolicy> GetCorsPolicyAsync(HttpRequestMessage request, CancellationToken cancellationToken)

@@ -4,7 +4,8 @@
     <Sites>
       <Site name="Web">
         <Bindings>
-          <Binding name="Endpoint1" endpointName="Http" />          
+          <Binding name="Endpoint1" endpointName="Http" /> 
+          <Binding name="HttpsIn" endpointName="HttpsIn" />
         </Bindings>
       </Site>
     </Sites>
@@ -24,9 +25,9 @@
         </Environment>
       </Task>
     </Startup>
-    <ConfigurationSettings>            
+    <ConfigurationSettings>
       <Setting name="AAD_ClientId" />
-      <Setting name="AAD_ClientSecret" />      
+      <Setting name="AAD_ClientSecret" />
       <Setting name="PlatformDiscoverUri" />
       <Setting name="PlatformAudienceUri" />
       <Setting name="ApplicationEndpointId" />
@@ -36,12 +37,23 @@
       <Setting name="SkypeForBusinessApplicationId" />
       <Setting name="AAD_MetadataUri" />
       <Setting name="AudienceUri" />
-      <Setting name="LogFullHttpRequestResponse" />      
+      <Setting name="LogFullHttpRequestResponse" />
+      <Setting name="AppTokenCertThumbprint" />
     </ConfigurationSettings>
     <Endpoints>
-      <InputEndpoint name="Http" protocol="http" port="80" />      
+      <InputEndpoint name="Http" protocol="http" port="80" />
+      <InputEndpoint name="HttpsIn" protocol="https" port="443" 
+             certificate="VHTrustedCert" />
     </Endpoints>
     <Imports>
+      <Import moduleName="RemoteAccess" />
+      <Import moduleName="RemoteForwarder" />
     </Imports>
+    <Certificates>
+         <Certificate name="VHTrustedCert" 
+                     storeLocation="LocalMachine" 
+                     storeName="My"
+                     permissionLevel="limitedOrElevated" />
+    </Certificates>
   </WebRole>
 </ServiceDefinition>

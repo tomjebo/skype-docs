@@ -10,14 +10,28 @@
       <Setting name="PlatformDiscoverUri" value="https://NOAMmeetings.resources.lync.com/platformservice/discover?deploymentpreference=Nightly" />
       <Setting name="PlatformAudienceUri" value="https://NOAMmeetings.resources.lync.com" />
       <!-- Replace base.url with your app's url; as registered on Azure -->
-      <Setting name="AudienceUri" value="https://base.url" />
-      <Setting name="CallbackUriFormat" value="https://base.url/callback?callbackContext={0}" />
-      <Setting name="ResourcesUriFormat" value="https://base.url/resources/{0}" />
-      <!-- Replace these with values relevant to your deployment -->                   
-      <Setting name="AAD_ClientId" value="GUID" />
-      <Setting name="AAD_ClientSecret" value="Secret key" />      
-      <Setting name="ApplicationEndpointId" value="Sip address" />
-      <Setting name="LogFullHttpRequestResponse" value="true" />      
-    </ConfigurationSettings>    
+      <Setting name="AudienceUri" value="http://vhtrustedcloud.cloudapp.net" />
+      <Setting name="CallbackUriFormat" value="http://vhtrustedcloud.cloudapp.net/callback?callbackContext={0}" />
+      <Setting name="ResourcesUriFormat" value="http://vhtrustedcloud.cloudapp.net/resources/{0}" />
+      <!-- Replace these with values relevant to your deployment -->
+      <Setting name="AAD_ClientId" value="5bf8f297-6fb8-4b4c-b6fd-6f856457d9ee" />
+      <Setting name="AAD_ClientSecret" value="7kPMuca8AqmBua8rCtnhjdTLkJDrKNsTd2somv+SZsc=" />
+      <Setting name="AppTokenCertThumbprint" value="" />
+      <Setting name="ApplicationEndpointId" value="sip:legalappt1@jebosoft.onmicrosoft.com" />
+      <Setting name="LogFullHttpRequestResponse" value="true" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.Enabled" value="false" />
+      <!--<Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountUsername" value="tomjebo@jebosoft.onmicrosoft.com" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountEncryptedPassword" value="MIIBnQYJKoZIhvcNAQcDoIIBjjCCAYoCAQAxggFOMIIBSgIBADAyMB4xHDAaBgNVBAMME1dpbmRvd3MgQXp1cmUgVG9vbHMCEHr6Q1DXVgy6T/hOax8mIPkwDQYJKoZIhvcNAQEBBQAEggEANm6/ewvBnwvI1bRLV2+82mKd8UYzsmoy3+crqhUAIZ+HoW7otpnsJkjY67ZgujoVRVffdaeRETkjmYAw7v2ElcjDkU53vLr+IrQcl85G+u9FNezetO8iYtEgljyb6yv2aK23D2leT/YIHb+ppnOw7oPf2xJhP1Jxc5PDKJ/7Hj48GCG2KpLomWhmpQGGSKRyNTCg/s8WKC0c/hmow3kApMzRjOhPzLPecYWqvN91nqG877ZLHF+ThR+JonAS4JIgZ89xSUQqiQWAQbjCACSRmOugfvG5ClCYTk4jh/clE33DA0Sa+c1ylciiLU83KFg3DrkieeNL/ypxJJr+efpoczAzBgkqhkiG9w0BBwEwFAYIKoZIhvcNAwcECCcn4SfIxvl9gBA8BwVs6W4z7+fb0OtESzQI" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountExpiration" value="2018-09-01T23:59:59.0000000-07:00" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteForwarder.Enabled" value="false" />-->
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountUsername" value="" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountEncryptedPassword" value="" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountExpiration" value="" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteForwarder.Enabled" value="" />
+    </ConfigurationSettings>
+    <Certificates>
+      <Certificate name="Microsoft.WindowsAzure.Plugins.RemoteAccess.PasswordEncryption" thumbprint="27CF2FEEBC527C664EEAEF24E1333E78A6B2F242" thumbprintAlgorithm="sha1" />
+      <Certificate name="VHTrustedCert" thumbprint="17b01b20383dcf236df5f38034f701625d8ac502" thumbprintAlgorithm="sha1" />
+    </Certificates>
   </Role>
 </ServiceConfiguration>
